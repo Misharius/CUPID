@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///C:/Users/user/Downloads/index_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUPID — Move · Think · Study to Earn</title>
+<link href="./CUPID — Move · Think · Study to Earn_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --gold: #FFD700;
+    --gold-dim: #B8960C;
+    --cyan: #00E5FF;
+    --purple: #A855F7;
+    --red: #FF6B6B;
+    --navy: #0a0a1a;
+    --navy2: #0d0d1f;
+    --navy3: #1a1a2e;
+    --navy4: #2a2a4a;
+    --text: #ffffff;
+    --text-muted: #aaaacc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Stars background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 95% 45%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 70%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(2px 2px at 80% 10%, rgba(255,215,0,0.3) 0%, transparent 100%),
+      radial-gradient(2px 2px at 5% 55%, rgba(0,229,255,0.2) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10,10,26,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,215,0,0.1);
+  }
+
+  .nav-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 6px;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255,215,0,0.4);
+    color: var(--navy) !important;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content { max-width: 800px; }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,215,0,0.1);
+    border: 1px solid rgba(255,215,0,0.3);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(64px, 12vw, 120px);
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 16px;
+    line-height: 1;
+    margin-bottom: 16px;
+    animation: fadeUp 0.8s ease 0.1s both;
+    text-shadow: 0 0 80px rgba(255,215,0,0.3);
+  }
+
+  .hero-tagline {
+    font-size: clamp(16px, 3vw, 22px);
+    color: var(--text-muted);
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .hero-tagline span {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 560px;
+    margin: 0 auto 48px;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.4s both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(255,215,0,0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: 1px solid var(--navy4);
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    background: rgba(255,215,0,0.05);
+  }
+
+  .hero-image {
+    margin-top: 64px;
+    animation: fadeUp 0.8s ease 0.5s both;
+    position: relative;
+  }
+
+  .hero-image img {
+    width: min(500px, 90vw);
+    border-radius: 24px;
+    box-shadow: 0 40px 120px rgba(255,215,0,0.15);
+  }
+
+  .hero-glow {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 60px;
+    background: radial-gradient(ellipse, rgba(255,215,0,0.3) 0%, transparent 70%);
+    filter: blur(20px);
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    position: relative;
+    z-index: 1;
+    background: var(--navy3);
+    border-top: 1px solid var(--navy4);
+    border-bottom: 1px solid var(--navy4);
+    padding: 32px 40px;
+  }
+
+  .stats-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .stat-item {}
+
+  .stat-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  /* SECTIONS */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 24px;
+  }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .section-desc {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 64px;
+  }
+
+  /* PILLARS */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .pillar-card {
+    background: var(--navy3);
+    border: 1px solid var(--navy4);
+    border-radius: 24px;
+    padding: 40px 32px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+
+  .pillar-card:nth-child(1):hover { border-color: var(--gold); box-shadow: 0 24px 60px rgba(255,215,0,0.1); }
+  .pillar-card:nth-child(2):hover { border-color: var(--cyan); box-shadow: 0 24px 60px rgba(0,229,255,0.1); }
+  .pillar-card:nth-child(3):hover { border-color: var(--purple); box-shadow: 0 24px 60px rgba(168,85,247,0.1); }
+
+  .pillar-icon {
+    font-size: 48px;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .pillar-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .pillar-card:nth-child(1) .pillar-title { color: var(--gold); }
+  .pillar-card:nth-child(2) .pillar-title { color: var(--cyan); }
+  .pillar-card:nth-child(3) .pillar-title { color: var(--purple); }
+
+  .pillar-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .pillar-earn {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .pillar-card:nth-child(1) .pillar-earn { color: var(--gold); }
+  .pillar-card:nth-child(2) .pillar-earn { color: var(--cyan); }
+  .pillar-card:nth-child(3) .pillar-earn { color: var(--purple); }
+
+  /* NFT SECTION */
+  .nft-section { background: var(--navy2); }
+
+  .nft-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .nft-card {
+    background: var(--navy3);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--navy4);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .nft-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .nft-card:nth-child(1):hover { box-shadow: 0 20px 60px rgba(0,229,255,0.15); border-color: #00E5FF; }
+  .nft-card:nth-child(2):hover { box-shadow: 0 20px 60px rgba(255,215,0,0.15); border-color: var(--gold); }
+  .nft-card:nth-child(3):hover { box-shadow: 0 20px 60px rgba(255,107,107,0.15); border-color: var(--red); }
+  .nft-card:nth-child(4):hover { box-shadow: 0 20px 60px rgba(168,85,247,0.25); border-color: var(--purple); }
+
+  .nft-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .nft-info { padding: 20px; }
+
+  .nft-tier {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .tier-common { background: rgba(0,229,255,0.15); color: #00E5FF; }
+  .tier-uncommon { background: rgba(255,215,0,0.15); color: var(--gold); }
+  .tier-rare { background: rgba(255,107,107,0.15); color: var(--red); }
+  .tier-legendary { background: rgba(168,85,247,0.15); color: var(--purple); }
+
+  .nft-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .nft-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* TOKENOMICS */
+  .token-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .token-card {
+    background: var(--navy3);
+    border-radius: 24px;
+    padding: 40px;
+    border: 1px solid var(--navy4);
+  }
+
+  .token-card:nth-child(1) { border-top: 3px solid var(--gold); }
+  .token-card:nth-child(2) { border-top: 3px solid var(--cyan); }
+
+  .token-symbol {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .token-card:nth-child(1) .token-symbol { color: var(--gold); }
+  .token-card:nth-child(2) .token-symbol { color: var(--cyan); }
+
+  .token-name {
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .token-rows { display: flex; flex-direction: column; gap: 12px; }
+
+  .token-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--navy4);
+  }
+
+  .token-row:last-child { border-bottom: none; }
+
+  .token-row-label { font-size: 13px; color: var(--text-muted); }
+  .token-row-value { font-size: 13px; font-weight: 600; color: var(--text); }
+
+  /* ROADMAP */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+  }
+
+  .roadmap-grid::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), var(--cyan), var(--purple), var(--red));
+    opacity: 0.3;
+  }
+
+  .roadmap-card {
+    background: var(--navy3);
+    border-radius: 20px;
+    padding: 32px 24px;
+    border: 1px solid var(--navy4);
+    position: relative;
+  }
+
+  .roadmap-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .roadmap-card:nth-child(1) .roadmap-dot { background: var(--gold); box-shadow: 0 0 20px rgba(255,215,0,0.5); }
+  .roadmap-card:nth-child(2) .roadmap-dot { background: var(--cyan); box-shadow: 0 0 20px rgba(0,229,255,0.5); }
+  .roadmap-card:nth-child(3) .roadmap-dot { background: var(--purple); box-shadow: 0 0 20px rgba(168,85,247,0.5); }
+  .roadmap-card:nth-child(4) .roadmap-dot { background: var(--red); box-shadow: 0 0 20px rgba(255,107,107,0.5); }
+
+  .roadmap-phase {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .roadmap-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .roadmap-card:nth-child(1) .roadmap-title { color: var(--gold); }
+  .roadmap-card:nth-child(2) .roadmap-title { color: var(--cyan); }
+  .roadmap-card:nth-child(3) .roadmap-title { color: var(--purple); }
+  .roadmap-card:nth-child(4) .roadmap-title { color: var(--red); }
+
+  .roadmap-items { list-style: none; }
+
+  .roadmap-items li {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .roadmap-items li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  /* VENUS */
+  .venus-section {
+    background: var(--navy2);
+    text-align: center;
+  }
+
+  .venus-quote {
+    max-width: 700px;
+    margin: 0 auto 48px;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.8;
+    border-left: 3px solid var(--gold);
+    padding-left: 24px;
+    text-align: left;
+  }
+
+  .venus-quote cite {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    font-style: normal;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* COMMUNITY */
+  .community-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .community-card {
+    background: var(--navy3);
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid var(--navy4);
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.3s, border-color 0.3s;
+    display: block;
+  }
+
+  .community-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+  }
+
+  .community-icon { font-size: 40px; margin-bottom: 16px; display: block; }
+  .community-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .community-desc { font-size: 14px; color: var(--text-muted); }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    background: linear-gradient(180deg, var(--navy) 0%, rgba(255,215,0,0.03) 50%, var(--navy) 100%);
+  }
+
+  .cta-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(32px, 6vw, 64px);
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-shadow: 0 0 60px rgba(255,215,0,0.3);
+  }
+
+  .cta-desc {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+  }
+
+  .download-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .download-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--navy3);
+    border: 1px solid var(--navy4);
+    border-radius: 16px;
+    padding: 16px 28px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .download-btn:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+  }
+
+  .download-btn-icon { font-size: 32px; }
+
+  .download-btn-text { text-align: left; }
+  .download-btn-sub { font-size: 11px; color: var(--text-muted); }
+  .download-btn-name { font-size: 18px; font-weight: 700; }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    background: var(--navy2);
+    border-top: 1px solid var(--navy4);
+    padding: 48px 40px 32px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 6px;
+    margin-bottom: 12px;
+  }
+
+  .footer-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer-col-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .footer-links { list-style: none; }
+
+  .footer-links li { margin-bottom: 10px; }
+
+  .footer-links a {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--navy4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-16px); }
+  }
+
+  .hero-image img { animation: float 6s ease-in-out infinite; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .nft-grid { grid-template-columns: repeat(2, 1fr); }
+    .token-grid { grid-template-columns: 1fr; }
+    .roadmap-grid { grid-template-columns: 1fr 1fr; }
+    .roadmap-grid::before { display: none; }
+    .community-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .nft-grid { grid-template-columns: 1fr; }
+    .roadmap-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="file:///C:/Users/user/Downloads/index_1.html#" class="nav-logo">CUPID</a>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/user/Downloads/index_1.html#how">How it works</a></li>
+    <li><a href="file:///C:/Users/user/Downloads/index_1.html#nft">NFT Sneakers</a></li>
+    <li><a href="file:///C:/Users/user/Downloads/index_1.html#tokens">Tokens</a></li>
+    <li><a href="file:///C:/Users/user/Downloads/index_1.html#roadmap">Roadmap</a></li>
+    <li><a href="file:///C:/Users/user/Downloads/index_1.html#community" class="nav-cta">Join Community</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🌍 GLOBAL FITNESS ECOSYSTEM</div>
+    <h1 class="hero-title">CUPID</h1>
+    <p class="hero-tagline">
+      <span>Move</span> · <span>Think</span> · <span>Study</span> to Earn
+    </p>
+    <p class="hero-desc">
+      Unite people from every country through fitness and mental wellness. 
+      Walk, learn, grow — and earn real $CPD tokens for every healthy habit.
+      Inspired by The Venus Project.
+    </p>
+    <div class="hero-buttons">
+      <a href="file:///C:/Users/user/Downloads/index_1.html#" class="btn-primary">📱 Download App</a>
+      <a href="file:///C:/Users/user/Downloads/index_1.html#how" class="btn-secondary">Learn More →</a>
+    </div>
+    <div class="hero-image">
+      <img src="file:///C:/Users/user/Downloads/assets/splash-logo.jpg" alt="CUPID Sneaker" onerror="this.style.display=&#39;none&#39;" style="display: none;">
+      <div class="hero-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Countries</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Earn Pillars</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">$CPD</div>
+      <div class="stat-label">Utility Token</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4</div>
+      <div class="stat-label">NFT Tiers</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <span class="section-badge">How it works</span>
+    <h2 class="section-title">Three ways to earn</h2>
+    <p class="section-desc">Every healthy habit earns you $CPD tokens. The more you move, think, and learn — the more you earn.</p>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <span class="pillar-icon">🏃</span>
+        <h3 class="pillar-title">Move to Earn</h3>
+        <p class="pillar-desc">Walk, run, and work out. Your steps are tracked via GPS and motion sensors. Compete in global step challenges with runners from 50+ countries.</p>
+        <p class="pillar-earn">Up to +24 $CPD per day</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">🧠</span>
+        <h3 class="pillar-title">Think to Earn</h3>
+        <p class="pillar-desc">Daily brain training, mindfulness logs, cognitive challenges and focus sessions. Mental health is as important as physical health in CUPID.</p>
+        <p class="pillar-earn">Up to +16 $CPD per day</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">📚</span>
+        <h3 class="pillar-title">Study to Earn</h3>
+        <p class="pillar-desc">Complete learning modules, share knowledge globally, mentor others. Education is the foundation of a better world — and it pays in CUPID.</p>
+        <p class="pillar-earn">Up to +8 $CPD per day</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NFT SNEAKERS -->
+<section id="nft" class="nft-section">
+  <div class="section-inner">
+    <span class="section-badge">NFT Collection</span>
+    <h2 class="section-title">Your CUPID Sneakers</h2>
+    <p class="section-desc">4 tiers of NFT sneakers. Each one earns differently. Level them up, mint new ones, trade in the marketplace.</p>
+
+    <div class="nft-grid">
+      <div class="nft-card">
+        <img src="file:///C:/Users/user/Downloads/assets/sneaker-common.jpg" alt="Common" class="nft-image" onerror="this.style.background=&#39;#1a1a2e&#39;" style="background: rgb(26, 26, 46);">
+        <div class="nft-info">
+          <span class="nft-tier tier-common">COMMON</span>
+          <p class="nft-name">Common Wings</p>
+          <p class="nft-desc">Perfect starter sneaker. Begin your CUPID journey.</p>
+        </div>
+      </div>
+      <div class="nft-card">
+        <img src="file:///C:/Users/user/Downloads/assets/sneaker-uncommon.jpg" alt="Uncommon" class="nft-image" onerror="this.style.background=&#39;#1a1a2e&#39;" style="background: rgb(26, 26, 46);">
+        <div class="nft-info">
+          <span class="nft-tier tier-uncommon">UNCOMMON</span>
+          <p class="nft-name">Uncommon Wings</p>
+          <p class="nft-desc">Better efficiency. Higher daily token earnings.</p>
+        </div>
+      </div>
+      <div class="nft-card">
+        <img src="file:///C:/Users/user/Downloads/assets/sneaker-rare.jpg" alt="Rare" class="nft-image" onerror="this.style.background=&#39;#1a1a2e&#39;" style="background: rgb(26, 26, 46);">
+        <div class="nft-info">
+          <span class="nft-tier tier-rare">RARE</span>
+          <p class="nft-name">Rare Wings</p>
+          <p class="nft-desc">Top-tier stats. Unlocks exclusive global challenges.</p>
+        </div>
+      </div>
+      <div class="nft-card">
+        <img src="file:///C:/Users/user/Downloads/assets/sneaker-legendary.jpg" alt="Legendary" class="nft-image" onerror="this.style.background=&#39;#1a1a2e&#39;" style="background: rgb(26, 26, 46);">
+        <div class="nft-info">
+          <span class="nft-tier tier-legendary">LEGENDARY</span>
+          <p class="nft-name">Legendary Wings</p>
+          <p class="nft-desc">Maximum power. DAO voting rights. Ultimate status.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOKENOMICS -->
+<section id="tokens">
+  <div class="section-inner">
+    <span class="section-badge">Tokenomics</span>
+    <h2 class="section-title">Two token system</h2>
+    <p class="section-desc">A dual-token economy designed for long-term sustainability and real-world value.</p>
+
+    <div class="token-grid">
+      <div class="token-card">
+        <div class="token-symbol">$CPD</div>
+        <div class="token-name">CUPID UTILITY TOKEN</div>
+        <div class="token-rows">
+          <div class="token-row">
+            <span class="token-row-label">How to earn</span>
+            <span class="token-row-value">Move, Think, Study</span>
+          </div>
+          <div class="token-row">
+            <span class="token-row-label">How to spend</span>
+            <span class="token-row-value">Repairs, upgrades, mints</span>
+          </div>
+          <div class="token-row">
+            <span class="token-row-label">Supply</span>
+            <span class="token-row-value">Uncapped, emission-controlled</span>
+          </div>
+          <div class="token-row">
+            <span class="token-row-label">Anti-inflation</span>
+            <span class="token-row-value">Burn on mint + repair</span>
+          </div>
+        </div>
+      </div>
+      <div class="token-card">
+        <div class="token-symbol">$GEM</div>
+        <div class="token-name">CUPID GOVERNANCE TOKEN</div>
+        <div class="token-rows">
+          <div class="token-row">
+            <span class="token-row-label">How to earn</span>
+            <span class="token-row-value">Milestones, DAO, tournaments</span>
+          </div>
+          <div class="token-row">
+            <span class="token-row-label">How to spend</span>
+            <span class="token-row-value">Level 10+ upgrades, governance</span>
+          </div>
+          <div class="token-row">
+            <span class="token-row-label">Max supply</span>
+            <span class="token-row-value">1,000,000,000 $GEM</span>
+          </div>
+          <div class="token-row">
+            <span class="token-row-label">Utility</span>
+            <span class="token-row-value">DAO voting on features</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="section-inner">
+    <span class="section-badge">Roadmap</span>
+    <h2 class="section-title">The path forward</h2>
+    <p class="section-desc">From MVP to global wellness ecosystem — step by step.</p>
+
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-phase">PHASE 1</div>
+        <div class="roadmap-title">MVP Launch</div>
+        <ul class="roadmap-items">
+          <li>Move-to-Earn core</li>
+          <li>NFT sneakers</li>
+          <li>$CPD token</li>
+          <li>3 countries pilot</li>
+          <li>iOS + Android</li>
+        </ul>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-phase">PHASE 2</div>
+        <div class="roadmap-title">Growth</div>
+        <ul class="roadmap-items">
+          <li>Think + Study pillars</li>
+          <li>Team squad mode</li>
+          <li>Health score system</li>
+          <li>Telegram integration</li>
+          <li>20 countries</li>
+        </ul>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-phase">PHASE 3</div>
+        <div class="roadmap-title">Scale</div>
+        <ul class="roadmap-items">
+          <li>$GEM governance</li>
+          <li>DAO launch</li>
+          <li>Clinic B2B integrations</li>
+          <li>Wearable SDK</li>
+          <li>50+ countries</li>
+        </ul>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-phase">PHASE 4</div>
+        <div class="roadmap-title">Venus Vision</div>
+        <ul class="roadmap-items">
+          <li>Decentralized wellness fund</li>
+          <li>UBI-lite experiments</li>
+          <li>City health dashboards</li>
+          <li>Global cooperation layer</li>
+          <li>The Venus Project alignment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUS PROJECT -->
+<section class="venus-section">
+  <div class="section-inner" style="text-align:center">
+    <span class="section-badge">Our Philosophy</span>
+    <h2 class="section-title">Inspired by The Venus Project</h2>
+    <blockquote class="venus-quote">
+      "The purpose of the Venus Project is to help all people regardless of race, religion, or nationality realize their common heritage and improve their lives."
+      <cite>— Jacque Fresco, The Venus Project</cite>
+    </blockquote>
+    <p class="section-desc" style="margin:0 auto;text-align:center">
+      CUPID extends this vision into the digital age. We believe healthy people build a better world — and that technology should reward good habits, not exploit them.
+    </p>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="section-inner">
+    <span class="section-badge">Community</span>
+    <h2 class="section-title">Join the movement</h2>
+    <p class="section-desc">Runners, thinkers, and learners from 50+ countries. One global community.</p>
+
+    <div class="community-grid">
+      <a href="file:///C:/Users/user/Downloads/index_1.html#" class="community-card">
+        <span class="community-icon">✈️</span>
+        <div class="community-name">Telegram</div>
+        <div class="community-desc">Main community hub. News, challenges, squad formation.</div>
+      </a>
+      <a href="file:///C:/Users/user/Downloads/index_1.html#" class="community-card">
+        <span class="community-icon">🐦</span>
+        <div class="community-name">Twitter / X</div>
+        <div class="community-desc">Latest updates, token news, global leaderboard highlights.</div>
+      </a>
+      <a href="file:///C:/Users/user/Downloads/index_1.html#" class="community-card">
+        <span class="community-icon">💬</span>
+        <div class="community-name">Discord</div>
+        <div class="community-desc">Developer community, feedback, feature voting.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-inner">
+    <h2 class="cta-title">Ready to earn?</h2>
+    <p class="cta-desc">Download CUPID and start moving, thinking, and studying your way to rewards.</p>
+    <div class="download-buttons">
+      <a href="file:///C:/Users/user/Downloads/index_1.html#" class="download-btn">
+        <span class="download-btn-icon">🤖</span>
+        <div class="download-btn-text">
+          <div class="download-btn-sub">Get it on</div>
+          <div class="download-btn-name">Google Play</div>
+        </div>
+      </a>
+      <a href="file:///C:/Users/user/Downloads/index_1.html#" class="download-btn">
+        <span class="download-btn-icon">🍎</span>
+        <div class="download-btn-text">
+          <div class="download-btn-sub">Download on the</div>
+          <div class="download-btn-name">App Store</div>
+        </div>
+      </a>
+      <a href="file:///C:/Users/user/Downloads/index_1.html#" class="download-btn">
+        <span class="download-btn-icon">✈️</span>
+        <div class="download-btn-text">
+          <div class="download-btn-sub">Open as</div>
+          <div class="download-btn-name">Telegram Mini App</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">CUPID</div>
+      <p class="footer-desc">Move · Think · Study to Earn. A global fitness and mental wellness ecosystem inspired by The Venus Project.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Product</div>
+      <ul class="footer-links">
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Download App</a></li>
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">NFT Marketplace</a></li>
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Leaderboard</a></li>
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Whitepaper</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Community</div>
+      <ul class="footer-links">
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Telegram</a></li>
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Twitter / X</a></li>
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Discord</a></li>
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Privacy Policy</a></li>
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Terms of Service</a></li>
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Token Disclaimer</a></li>
+        <li><a href="file:///C:/Users/user/Downloads/index_1.html#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CUPID. All rights reserved.</span>
+    <span>Built with ❤️ for a healthier world</span>
+  </div>
+</footer>
+
+
+
+</body></html>
